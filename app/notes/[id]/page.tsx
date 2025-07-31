@@ -1,6 +1,7 @@
-import { fetchNoteById } from "@/lib/api"; // путь под себя
+import { fetchNoteById } from "@/lib/api";
 import { QueryClient, dehydrate } from "@tanstack/react-query";
 import NoteDetailsClient from "../NoteDetails.client";
+import { JSX } from "react";
 
 type PageProps = {
   params: {
@@ -8,7 +9,7 @@ type PageProps = {
   };
 };
 
-export default async function NoteDetailsPage({ params }: PageProps) {
+export default async function NoteDetailsPage({ params }: PageProps): Promise<JSX.Element> {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
