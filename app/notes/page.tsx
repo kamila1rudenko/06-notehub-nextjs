@@ -12,5 +12,7 @@ export default async function NotesPage() {
 
   const state = dehydrate(queryClient);
 
-  return <NotesClient dehydratedState={state} />;
+ return (
+    <NotesClient dehydratedState={dehydrate(queryClient)} />
+  );
 }

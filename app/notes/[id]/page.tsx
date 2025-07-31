@@ -13,3 +13,4 @@ export default async function NoteDetailsPage({ params }: { params: { id: string
 
   return <NoteDetailsClient dehydratedState={state} />;
 }
+

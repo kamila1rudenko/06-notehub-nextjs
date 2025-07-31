@@ -1,7 +1,7 @@
 import TanStackProvider from "../components/TanStackProvider/TanStackProvider";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import "../styles/globals.css";
+import "./global.css";
 
 export const metadata = {
   title: "NoteHub",
