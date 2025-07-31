@@ -1,18 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { QueryClient, QueryClientProvider, Hydrate, useQuery } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider, useQuery, DehydratedState } from "@tanstack/react-query";
+import { HydrationBoundary } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
+
 import { fetchNoteById } from "@/lib/api";
 
-export default function NoteDetailsClient({ dehydratedState }: { dehydratedState: unknown }) {
+export default function NoteDetailsClient({ dehydratedState }: { dehydratedState: DehydratedState | null | undefined }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Hydrate state={dehydratedState}>
+      <HydrationBoundary state={dehydratedState}> 
         <Note />
-      </Hydrate>
+      </HydrationBoundary>
     </QueryClientProvider>
   );
 }
