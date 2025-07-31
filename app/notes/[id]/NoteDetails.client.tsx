@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 
 import { fetchNoteById } from "@/lib/api";
 
+
 export default function NoteDetailsClient({ dehydratedState }: { dehydratedState: DehydratedState | null | undefined }) {
   const [queryClient] = useState(() => new QueryClient());
 
