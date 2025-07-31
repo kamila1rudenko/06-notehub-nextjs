@@ -11,7 +11,7 @@ type NoteDetailsProps = {
   dehydratedState: unknown; 
 };
 
-export default function NoteDetailsClient({ dehydratedState }: NoteDetailsProps) {
+export default function NoteDetailsClient({}: NoteDetailsProps) {
 
   const [queryClient] = useState(() => new QueryClient());
 

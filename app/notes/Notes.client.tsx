@@ -19,7 +19,7 @@ interface NotesClientProps {
   dehydratedState: unknown;
 }
 
-export default function NotesClient({ dehydratedState }: NotesClientProps) {
+export default function NotesClient({} : NotesClientProps) {
   const [queryClient] = useState(() => new QueryClient());
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
