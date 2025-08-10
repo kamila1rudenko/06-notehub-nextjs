@@ -28,6 +28,7 @@ function Note() {
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),
     enabled: !!id,
+    refetchOnMount: false,
   });
 
   if (isLoading) return <p>Loading...</p>;
@@ -37,6 +38,8 @@ function Note() {
     <div>
       <h2>{note.title}</h2>
       <p>{note.content}</p>
+      <p><strong>Tag:</strong> {note.tag}</p>
+      <p><strong>Created at:</strong> {new Date(note.createdAt).toLocaleString()}</p>
     </div>
   );
 }
